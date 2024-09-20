@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+Allow: /$
+Allow: /login
+Allow: /m-login
+Allow: /assets
+
+#DaumWebMasterTool:db2e20f3a90ae9186c4902881d0b5271d3bf1b185d4e75cc43f7bc0554d71b22:zRHCr84CatXj/Td7gztywQ==

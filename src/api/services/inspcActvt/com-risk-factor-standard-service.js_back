@@ -1,0 +1,89 @@
+import {axiosApiDEV} from "@/api";
+
+export default {
+    // 1. 대분류 조회
+    getLgCatList(params) {
+        if (params === undefined || params === "") {
+            params = {};
+        }
+        return new Promise((resolve, reject) => {
+            axiosApiDEV
+                .post(`/v1/rfs/rfsLgCategorySearchList`, params)
+                .then((res) => {
+                    resolve(res);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    },
+
+    // 2. 중분류 조회
+    getMdCatList(params) {
+        if (params === undefined || params === "") {
+            params = {};
+        }
+
+        return new Promise((resolve, reject) => {
+            axiosApiDEV
+                .post(`/v1/rfs/rfsMdCategorySearchList`, params)
+                .then((res) => {
+                    resolve(res);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    },
+
+    // 3. 작업 명 조회
+    getWrkCatList(params) {
+        if (params === undefined || params === "") {
+            params = {};
+        }
+
+        return new Promise((resolve, reject) => {
+            axiosApiDEV
+                .post(`/v1/rfs/rfsWrkCategorySearchList`, params)
+                .then((res) => {
+                    resolve(res);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    },
+
+    // 4. 위험요인 & 위험대책 조회
+    getRskRmmList(params) {
+        if (params === undefined || params === "") {
+            params = {};
+        }
+        return new Promise((resolve, reject) => {
+            axiosApiDEV
+                .post(`/v1/rfs/rfsRmmCategorySearchList`, params)
+                .then((res) => {
+                    resolve(res);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    },
+    // 5.공종대상 조회
+    searchContyCdList(param){
+        if(param === undefined || param === ""){
+            param = {};
+        }
+        return new Promise((resolve, reject) => {
+            axiosApiDEV
+                .post(`/v1/ais/actSafeIspContyCdSearchList`, param)
+                .then((res) => {
+                    resolve(res);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    },
+}

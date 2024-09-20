@@ -1,0 +1,575 @@
+<template>
+  <div class="popup add_factor_standard">
+    <div class="popup_title">
+      <span>표준 추가</span>
+      <button class="popup_close" @click="popupClose"></button>
+    </div>
+    <div class="popup_content">
+      <div class="subtitle_area">
+        <div class="title">표준공종 / 위험요인</div>
+      </div>
+      <div class="content_box">
+        <div class="std_sort_step1">
+          <div class="sort_grid_title_area">
+            <span>대분류</span>
+          </div>
+          <div class="grid_sort">
+            <table>
+              <tr v-for="(item, index) in lgCateList.value" :key="index">
+                <td
+                  @click="selectFetchLgCatList(item, index)"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  {{ item.lgCatNm }}
+                  <span
+                    :class="{ test: index === selectedLgCatRowIndex }"
+                  ></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="std_sort_step2">
+          <div class="sort_grid_title_area">
+            <span>중분류</span>
+          </div>
+          <div class="grid_sort">
+            <table>
+              <tr v-for="(item, index) in mdCateList.value" :key="index">
+                <td
+                  @click="selectFetchMdCatList(item, index)"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  {{ item.mdCatNm }}
+                  <span
+                    :class="{ test: index === selectedMdCatRowIndex }"
+                  ></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="std_sort_step3">
+          <div class="sort_grid_title_area">
+            <span>작업명</span>
+          </div>
+          <div class="grid_sort">
+            <table>
+              <tr v-for="(item, index) in wrkCateList.value" :key="index">
+                <td
+                  @click="selectFetchWrkCatList(item, index)"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  {{ item.wrkNm }}
+                  <span
+                    :class="{ test: index === selectedWrkCatRowIndex }"
+                  ></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="subtitle_area">
+        <div class="title">위험요인&대책</div>
+      </div>
+      <!-- 멀티체크 테스트 -->
+        <button @click="test">테스트</button> <!-- 함수실행 -->
+        <div class="grid_multichk">
+          <table>
+            <tr class="multi_chk_row">
+              <td><input type="checkbox" class="multi_chk_left">왼쪽항목 1</td>
+              <td>
+                <table>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-1</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-2</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-3</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-4</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr class="multi_chk_row">
+              <td><input type="checkbox" class="multi_chk_left">왼쪽항목 1</td>
+              <td>
+                <table>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-1</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-2</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-3</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr class="multi_chk_row">
+              <td><input type="checkbox" class="multi_chk_left">왼쪽항목 1</td>
+              <td>
+                <table>
+                  <tr>
+                    <td><input type="checkbox" class="multi_chk_right">오른쪽 항목 1-1</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      <!-- 멀티체크 테스트 end -->
+<!--      <div class="std_sort_step4">-->
+<!--        <div class="sort_grid_title_area">-->
+<!--          <div class="fl_l w40p">-->
+<!--            <span>위험요인</span>-->
+<!--          </div>-->
+<!--          <div class="fl_l w60p">-->
+<!--            <span>감소대책</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="grid_sort2">-->
+<!--          <table>-->
+<!--            <colgroup>-->
+<!--              <col style="width: 40%" />-->
+<!--              <col style="width: 60%" />-->
+<!--            </colgroup>-->
+
+<!--            <tbody v-for="(item, index) in rskFctrList" :key="item">-->
+<!--              <tr @click="selectFetchRskFctrCatList(item, index)">-->
+<!--                <td :rowspan="item[0].cnt + 1">-->
+<!--                  {{ item[0].rskFctr }}-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                  {{ item[1].rskMsr }}-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              <tr-->
+<!--                v-for="(ChildItem, index) in item.slice(2)"-->
+<!--                :key="ChildItem.rskMsrSeq"-->
+<!--              >-->
+<!--                <td @click="selectFetchRskMsrCatList(ChildItem, index)">-->
+<!--                  {{ ChildItem.rskMsr }}-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--            </tbody>-->
+<!--          </table>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <div class="popup_button">
+      <button @click="applyParam">저장</button>
+      <button @click="popupClose">취소</button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "popRiskFactorStandard",
+  methods: {
+    addFactorStandardChild() {
+      // 편집 팝업
+      document
+        .getElementsByClassName("loading_wrap")[0]
+        .classList.remove("show");
+      document.getElementsByClassName("popup_bg")[0].classList.add("show");
+    },
+    // popupClose() {
+    //   document.getElementsByClassName("popup_bg")[0].classList.remove("show");
+    //   document.getElementsByClassName("popup")[0].classList.remove("show");
+    //   document.getElementsByClassName("add_site_category")[0].classList.remove("show");
+    //   document.getElementsByClassName("add_factor_standard")[0].classList.remove("show");
+    // }
+  },
+};
+</script>
+
+<script setup>
+import {
+  getCurrentInstance,
+  onBeforeMount,
+  ref,
+  defineComponent,
+  reactive,
+  defineEmits,
+} from "vue";
+import "ag-grid-community/styles//ag-grid.css";
+import "ag-grid-community/styles//ag-theme-alpine.css";
+import { ko } from "date-fns/locale";
+import { axiosApiDEV } from "@/api";
+import { AgGridVue } from "ag-grid-vue3";
+import { storeToRefs } from "pinia";
+import { useComRiskFactorStandardStore } from "@/stores/inspcActvt/com-risk-factor-standard-store";
+
+const { defaultColDef, localeText } = defineProps([
+  "defaultColDef",
+  "localeText",
+]);
+
+const app = getCurrentInstance();
+const $loginStore = app.appContext.config.globalProperties.$loginStore;
+const store = useComRiskFactorStandardStore();
+let lgCateList = reactive([]); // 대분류
+let mdCateList = reactive([]); // 중분류
+let wrkCateList = reactive([]); // 작업명 분류
+let FctrMst = reactive([]); // 위험요인
+let fctrMsr = reactive([]); // 대책 분류
+let rsfRmmCateList = reactive([]); // 위험요인&대책 분류
+let dtlParams = reactive([]);
+let emitDtl = reactive({});
+
+const emit = defineEmits(["applyParam"]);
+
+const { lgCatList, lgCatData, mdCatList, mdCatData, wrkList, wrkData, rskFctrList, rskFctrData } = storeToRefs(store);
+
+let selectedLgCatRowIndex = ref(null);
+let selectedMdCatRowIndex = ref(null);
+let selectedWrkCatRowIndex = ref(null);
+
+//표준추가 저장버튼
+const applyParam = () => {
+  console.log("저장 버튼 클릭시", emitDtl);
+
+  let simpleParam = {
+    vendrCd: emitDtl.vendrCd,
+    siteCd: emitDtl.siteCd,
+    siteHrmrskFctrMstSeq: emitDtl.siteHrmrskFctrMstSeq,
+    lgCatCd: emitDtl.lgCatCd,
+    lgCatNm: emitDtl.lgCatNm,
+    mdCatCd: emitDtl.mdCatCd,
+    mdCatNm: emitDtl.mdCatNm,
+    wrkNmCd: emitDtl.wrkNmCd,
+    wrkNm: emitDtl.wrkNm,
+    rskFctrSeq: emitDtl.rskFctrSeq,
+    rskFctr: emitDtl.rskFctr,
+    rskMsrSeq: emitDtl.rskMsrSeq,
+    rskMsr: emitDtl.rskMsr,
+    mode: 'I',
+    isEditable: true,
+  };
+  console.log("단순 파라미터 변형 값", simpleParam);
+
+  if (confirm("저장하시겠습니까?")) {
+    emit("applyParam", simpleParam);
+    popupClose();
+  } else {
+    return false;
+  }
+};
+
+// 팝업창 닫기
+const popupClose = () => {
+  document.getElementsByClassName("popup_bg")[0].classList.remove("show");
+  document.getElementsByClassName("loading_wrap")[0].classList.remove("show");
+  document.getElementsByClassName("popup")[0].classList.remove("show");
+  // document.getElementsByClassName("add_site_category")[0].classList.remove("show");
+  document
+    .getElementsByClassName("add_factor_standard")[0]
+    .classList.remove("show");
+};
+
+// 대분류 클릭 시 중분류 검색
+async function selectFetchLgCatList(item, index) {
+  selectedLgCatRowIndex.value = index;
+  mdCateList.value = await store.fetchMdCatList(item);
+
+  dtlParams = item;
+  emitDtl = item;
+  emitDtl.mdCatNm = mdCateList.value[0].mdCatNm;
+  emitDtl.mdCatNm = mdCateList.value[0].mdCatNm;
+  dtlParams.mdCatCd = mdCateList.value[0].mdCatCd;
+  dtlParams.mdCatNm = mdCateList.value[0].mdCatNm;
+
+  await selectFetchMdCatList(emitDtl, index);
+}
+
+// 중분류 클릭 시 작업명 분류 검색
+async function selectFetchMdCatList(item, index) {
+  if (item.lgCatCd === null) {
+    item.lgCatCd = emitDtl.lgCatCd;
+    item.lgCatNm = emitDtl.lgCatNm;
+  }
+  wrkCateList.value = await store.fetchWrkList(item, index);
+
+  dtlParams = item;
+  emitDtl = item;
+  emitDtl.wrkNmCd = wrkCateList.value[0].wrkNmCd;
+  emitDtl.wrkNm = wrkCateList.value[0].wrkNm;
+  dtlParams.wrkNmCd = wrkCateList.value[0].wrkNmCd;
+  dtlParams.wrkNm = wrkCateList.value[0].wrkNm;
+
+  selectedMdCatRowIndex.value = index;
+
+  await selectFetchWrkCatList(emitDtl, index);
+}
+
+// 작업명 클릭 시 위험요인&대책 분류 검색
+async function selectFetchWrkCatList(item, index) {
+  if (item.lgCatCd === null || item.mdCatCd === null) {
+    console.log("들어오나?");
+    item.lgCatCd = emitDtl.lgCatCd;
+    item.lgCatNm = emitDtl.lgCatNm;
+    item.mdCatCd = emitDtl.mdCatCd;
+    item.mdCatNm = emitDtl.mdCatNm;
+  }
+
+  rsfRmmCateList.value = await store.fetchRskFctrMsrList(item, index);
+
+  dtlParams.rskFctr = rsfRmmCateList.value[0][0].rskFctr;
+  dtlParams.rskFctrSeq = rsfRmmCateList.value[0][0].rskFctrSeq;
+  dtlParams.freq = rsfRmmCateList.value[0][0].freq;
+  dtlParams.strngth = rsfRmmCateList.value[0][0].strngth;
+  dtlParams.rst = rsfRmmCateList.value[0][0].rst;
+
+  if (
+    rsfRmmCateList.value[1] !== null &&
+    rsfRmmCateList.value[1] !== undefined
+  ) {
+    dtlParams.rskMsr = rsfRmmCateList.value[1][0].rskMsr;
+    dtlParams.rskMsrSeq = rsfRmmCateList.value[1][0].rskMsrSeq;
+    emitDtl.freq = rsfRmmCateList.value[1][0].freq;
+    emitDtl.strngth = rsfRmmCateList.value[1][0].strngth;
+    emitDtl.rst = rsfRmmCateList.value[1][0].rst;
+  } else {
+    dtlParams.rskMsr = rsfRmmCateList.value[0][0].rskMsr;
+    dtlParams.rskMsrSeq = rsfRmmCateList.value[0][0].rskMsrSeq;
+    emitDtl.freq = rsfRmmCateList.value[0][0].freq;
+    emitDtl.strngth = rsfRmmCateList.value[0][0].strngth;
+    emitDtl.rst = rsfRmmCateList.value[0][0].rst;
+  }
+
+  selectedWrkCatRowIndex.value = index;
+}
+
+let rskFctrArray = [];
+let rskMsrArray = [];
+
+// 위험요인 클릭 시
+async function selectFetchRskFctrCatList(item, index) {
+  // RsfRmm
+  let rskFctr = "";
+  let rskFctrSeq = "";
+  let rskMsr = "";
+  let rskMsrSeq = "";
+  let check = 'N';
+  const separator = "/";
+
+  //위험요인&감소대책 분기처리
+  rskFctrList._object.rskFctrList.filter((e,i) => {
+    if(i === index && e.check !== 'Y') e.check = 'Y';
+    console.log('분기 확인 : ', i === index && e.check === 'Y')
+    //위험요인
+    if(i === index && e.check === 'Y'){
+      console.log('----------------------- 분기점 if 문 ----------------------------')
+      rskFctrArray.push({
+        rskFctr : rskFctrList._object.rskFctrList[index][0].rskFctr,
+        rskFctrSeq : rskFctrList._object.rskFctrList[index][0].rskFctrSeq,
+      })
+      // 원래 filter 있던자리
+      console.log('위험요인 갯수만큼의 값 : ', rskFctrArray);
+      console.log('e rskFctrSeq : ', e);
+    }
+    // else{
+    //   console.log('----------------------- 분기점 else 문 ----------------------------')
+    //   console.log('바뀌기 전 rskFctrList filter값', rskFctrArray);
+    //   // for (let j=0; j < rskFctrArray.length; j++){
+    //   //   if(rskFctrArray[j].rskFctrSeq === e[i].rskFctrSeq){
+    //   //     rskFctrArray.splice(j,1)
+    //   //     i--;
+    //   //   }
+    //   // }
+    //   console.log('rskFctrList filter값이 N인경우일것임', e.check);
+    //   console.log('바뀐 후 rskFctrList filter값', rskFctrArray);
+    // }
+
+    if(e.check === 'Y') {
+      rskFctrArray.filter((ele, idx) => {
+        // console.log('선택한 위험요인값 : ', ele) // 선택한 위험요인값
+        console.log('위험요인 인덱스 : ', i); // 위험요인 인덱스
+        console.log('감소대책 인덱스 : ', idx) // 감소대책 인덱스
+        console.log('선택한 인덱스 : ', index) // 선택한 인덱스
+        console.log('선택한 인덱스 : ', rskFctr) // 선택한 인덱스
+        ele = rskFctrArray.indexOf(ele) === idx
+        console.log('선택한 위험요인값 : ', ele) // 선택한 위험요인값
+        if (rskFctr === "") {
+          rskFctr += ele.rskFctr;
+          rskFctrSeq += ele.rskFctrSeq;
+        } else {
+          rskFctr += separator + ele.rskFctr;
+          rskFctrSeq += separator + ele.rskFctrSeq;
+        }
+      })
+    }
+
+    console.log('check : ', rskFctrArray)
+  });
+
+  console.log('-------------------check rskFctr data-------------------')
+  console.log('parameter값 확인 : ',rskFctrList._object.rskFctrList)
+  console.log(rskFctr)
+  console.log(rskFctrSeq)
+
+  // rskFctr += rskFctrList._object.rskFctrList[index][0].rskFctr;
+  // rskFctrSeq += rskFctrList._object.rskFctrList[index][0].rskFctrSeq;
+  // rskFctr += separator + rskFctrList._object.rskFctrList[index][0].rskFctr;
+  // rskFctrSeq += separator + rskFctrList._object.rskFctrList[index][0].rskFctrSeq;
+
+  rskMsrArray = [...item];
+
+  // 감소대책 전체선택
+  rskMsrArray.forEach((e, i) => {
+    if (i > 0) {
+      //index가 0번째도 같은 값을가져와서 0번째 제외 한 값가져오기
+      if (i === 1) {
+        rskMsr += e.rskMsr;
+        rskMsrSeq += e.rskMsrSeq;
+      } else {
+        rskMsr += separator + e.rskMsr;
+        rskMsrSeq += separator + e.rskMsrSeq;
+      }
+    }
+  });
+
+  emitDtl.rskFctr = rskFctr.replaceAll("/", "\n");
+  emitDtl.rskFctrSeq = rskFctrSeq;
+  emitDtl.rskMsr = rskMsr.replaceAll("/", "\n");
+  emitDtl.rskMsrSeq = rskMsrSeq;
+
+  console.log("my item : ", emitDtl);
+}
+
+// 멀티체크박스 테스트
+function test() {
+  const multiChk = document.querySelectorAll(".multi_chk_row");
+
+  multiChk.forEach(function (el, index) {
+
+    // 왼쪽 클릭
+    const parent = document.getElementsByClassName('multi_chk_row')[index];
+    const checkAll = parent.querySelector('.multi_chk_left');
+
+
+    checkAll.addEventListener('click', function(){
+
+      const isChecked = checkAll.checked;
+
+      if(isChecked){
+        const checkboxes = parent.querySelectorAll('.multi_chk_right');
+
+        for(const checkbox of checkboxes){
+          checkbox.checked = true;
+        }
+      }
+
+      else{
+        const checkboxes = parent.querySelectorAll('.multi_chk_right');
+        for(const checkbox of checkboxes){
+          checkbox.checked = false;
+        }
+      }
+    })
+    // 오른쪽 클릭
+    const checkboxes = parent.querySelectorAll('.multi_chk_right');
+    for(const checkbox of checkboxes){
+      checkbox.addEventListener('click',function(){
+
+        const checkedCnt = parent.querySelectorAll('.multi_chk_right:checked').length;
+
+        if(checkedCnt > 0){
+          parent.querySelector('.multi_chk_left').checked = true;
+        }
+        else{
+          parent.querySelector('.multi_chk_left').checked = false;
+        }
+
+      });
+
+    }
+  });
+}
+// 멀티체크박스 테스트 end
+
+// 위험대책 클릭 시
+async function selectFetchRskMsrCatList(ChildItem, index) {
+  console.log("selectFetchRskMsrCatList item", ChildItem);
+  console.log("selectFetchRskMsrCatList index", index);
+
+  emitDtl.rskFctr = ChildItem.rskFctr;
+  emitDtl.rskFctrSeq = ChildItem.rskFctrSeq;
+  emitDtl.rskMsr = ChildItem.rskMsr;
+  emitDtl.rskMsrSeq = ChildItem.rskMsrSeq;
+  emitDtl.rskFctr = ChildItem.rskFctr;
+
+  console.log("selectFetchRskMsrCatList dtlparam", emitDtl);
+  console.log("selectFetchRskMsrCatList dtlparam", dtlParams);
+}
+
+onBeforeMount(async () => {
+  const lgCatListParam = {
+    vendrCd: $loginStore.$state.siteInfo.vendrCd,
+    siteCd: $loginStore.$state.siteInfo.siteCd,
+  };
+  lgCateList.value = await store.fetchLgCatList(lgCatListParam);
+  emitDtl.vendrCd = lgCatListParam.vendrCd;
+  emitDtl.siteCd = lgCatListParam.siteCd;
+  emitDtl.contyCd = lgCatListParam.contyCd;
+  console.log("pop onBeforeMount", lgCateList);
+  console.log("pop onBeforeMount", emitDtl);
+});
+
+const isSelected = (item, idx) => {
+  console.log("@@@@@@@@@@emitDtl -> ", emitDtl);
+  console.log("@@@@@@@@@@item -> ", item);
+  console.log("@@@@@@@@@@idx -> ", idx);
+  return true;
+};
+</script>
+
+<style scoped>
+.content_box {
+  display: flex;
+  justify-content: space-between;
+}
+.content_box:nth-child(3) {
+  margin: 0px;
+}
+.popup.add_site_category {
+  width: 300px;
+  height: 500px;
+}
+tr td:hover {
+  background-color: #ffe4b5;
+  cursor: pointer;
+}
+td {
+  vertical-align: top;
+  padding: 10px;
+}
+.test {
+  background-image: url("@/assets/img/price_check_violet.png");
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+}
+</style>

@@ -1,0 +1,211 @@
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: normal;
+  src: url("@/assets/font/NotoSansKR-Regular-Hestia.woff") format("woff2"),
+    url("@/assets/font/NotoSansKR-Regular-Hestia.woff") format("woff"),
+    url("@/assets/font/NotoSansKR-Regular-Hestia.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: bold;
+  src: url("@/assets/font/NotoSansKR-Bold-Hestia.woff") format("woff2"),
+    url("@/assets/font/NotoSansKR-Bold-Hestia.woff") format("woff"),
+    url("@/assets/font/NotoSansKR-Bold-Hestia.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pretendard-T";
+  src: local("Pretendard-T"),
+    url("@/assets/font/Pretendard-T.woff") format("woff"),
+    url("@/assets/font/Pretendard-T.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-T.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Pretendard-R";
+  src: local("Pretendard-R"),
+    url("@/assets/font/Pretendard-R.woff") format("woff"),
+    url("@/assets/font/Pretendard-R.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-R.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Pretendard-M";
+  src: local("Pretendard-M"),
+    url("@/assets/font/Pretendard-M.woff") format("woff"),
+    url("@/assets/font/Pretendard-M.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-M.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Pretendard-B";
+  src: local("Pretendard-B"),
+    url("@/assets/font/Pretendard-B.woff") format("woff"),
+    url("@/assets/font/Pretendard-B.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-B.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Pretendard-EB";
+  src: local("Pretendard-EB"),
+    url("@/assets/font/Pretendard-EB.woff") format("woff"),
+    url("@/assets/font/Pretendard-EB.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-EB.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  user-select: none;
+}
+*:focus {
+  outline: none;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Pretendard-R";
+  font-size: 14px;
+  color: #252525;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: "NanumSquare-R", "Malgun Gothic", dotum, "돋움", sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin: 0px;
+  padding: 0px;
+}
+button {
+  cursor: pointer;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+fieldset {
+  border: 0;
+}
+legend {
+  color: #000;
+}
+ol,
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+caption,
+hr,
+legend {
+  font-size: 1px;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  text-indent: -9999em;
+}
+a,
+a:active,
+a:focus,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #666;
+}
+
+.ta_c {
+  text-align: center;
+}
+.ta_l {
+  text-align: left;
+}
+.ta_r {
+  text-align: right;
+}
+.pd0 {
+  padding: 0px !important;
+}
+.clear {
+  clear: both;
+}
+
+.index_wrap *::-webkit-scrollbar,
+.content_box::-webkit-scrollbar,
+.content_wrap *::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  border-radius: 20px;
+}
+.index_wrap *::-webkit-scrollbar-thumb,
+.content_box::-webkit-scrollbar-thumb,
+.content_wrap *::-webkit-scrollbar-thumb {
+  background-color: #a0b7c1;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+.index_wrap *::-webkit-scrollbar-thumb:hover,
+.content_box::-webkit-scrollbar-thumb:hover,
+.content_wrap *::-webkit-scrollbar-thumb:hover {
+  background-color: #608493;
+  border: 3px solid #ffffff;
+}
+.index_wrap *::-webkit-scrollbar-track,
+.content_box::-webkit-scrollbar-track,
+.content_wrap *::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.page_content_area::-webkit-scrollbar-thumb,
+.popup_content::-webkit-scrollbar-thumb {
+  background-color: #a0b7c1;
+  border-radius: 10px;
+  border: 3px solid #f1f6f8;
+}
+.page_content_area::-webkit-scrollbar-thumb:hover,
+.popup_content::-webkit-scrollbar-thumb:hover {
+  background-color: #608493;
+  border: 3px solid #f1f6f8;
+}
+.page_content_area::-webkit-scrollbar-track,
+.popup_content::-webkit-scrollbar-track {
+  background-color: #f1f6f8;
+}
+
+.dash_pop_alam_list .content::-webkit-scrollbar-thumb {
+  background-color: #a0b7c1;
+  border-radius: 10px;
+  border: 3px solid #3f6785;
+}
+.dash_pop_alam_list .content::-webkit-scrollbar-thumb:hover {
+  background-color: #cfdbe1;
+  border: 3px solid #3f6785;
+}
+.dash_pop_alam_list .content::-webkit-scrollbar-track {
+  background-color: #3f6785;
+}

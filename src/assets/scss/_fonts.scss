@@ -1,0 +1,75 @@
+// 폰트 파일과 관련된 CSS를 설정
+@font-face {
+  font-family: "nanumSquareNeo";
+  font-weight: 300;
+  font-style: normal;
+  src: url("@/assets/font/NanumSquareNeo-L.eot");
+  src: local(※);
+  src: url("@/assets/font/NanumSquareNeo-L.eot?#iefix")
+      format("embedded-opentype"),
+    url("@/assets/font/NanumSquareNeo-L.woff") format("woff"),
+    url("@/assets/font/NanumSquareNeo-L.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "nanumSquareNeo";
+  font-weight: 400;
+  font-style: normal;
+  src: url("@/assets/font/NanumSquareNeo-R.eot");
+  src: local(※);
+  src: url("@/assets/font/NanumSquareNeo-R.eot?#iefix")
+      format("embedded-opentype"),
+    url("@/assets/font/NanumSquareNeo-R.woff") format("woff"),
+    url("@/assets/font/NanumSquareNeo-R.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-style: normal;
+  src: local("Pretendard-T"),
+    url("@/assets/font/Pretendard-T.woff") format("woff"),
+    url("@/assets/font/Pretendard-T.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-T.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-style: normal;
+  src: local("Pretendard-R"),
+    url("@/assets/font/Pretendard-R.woff") format("woff"),
+    url("@/assets/font/Pretendard-R.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-R.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-style: normal;
+  src: local("Pretendard-M"),
+    url("@/assets/font/Pretendard-M.woff") format("woff"),
+    url("@/assets/font/Pretendard-M.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-M.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-style: normal;
+  src: local("Pretendard-B"),
+    url("@/assets/font/Pretendard-B.woff") format("woff"),
+    url("@/assets/font/Pretendard-B.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-B.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 900;
+  font-style: normal;
+  src: local("Pretendard-EB"),
+    url("@/assets/font/Pretendard-EB.woff") format("woff"),
+    url("@/assets/font/Pretendard-EB.ttf") format("truetype"),
+    url("@/assets/font/Pretendard-EB.otf") format("opentype");
+  font-display: swap;
+}

@@ -1,0 +1,271 @@
+/* table style */
+.grid_default .ag-root-wrapper,
+.grid_default2 .ag-root-wrapper,
+.grid_default3 .ag-root-wrapper,
+.grid_dash .ag-root-wrapper {
+  border: 0px;
+}
+
+/* th style */
+.grid_default .ag-header,
+.grid_default .ag-advanced-filter-header,
+.grid_default2 .ag-header,
+.grid_default2 .ag-advanced-filter-header,
+.grid_default3 .ag-header,
+.grid_default3 .ag-advanced-filter-header {
+  border-bottom: 2px solid #596d76;
+  background-color: #ffffff;
+  font-family: "Pretendard-B";
+  font-size: 14px;
+  color: #596d76;
+}
+
+.grid_default .ag-header-group-cell-label,
+.grid_default .ag-header-cell-label,
+.grid_default .ag-header-group-cell,
+.grid_default2 .ag-header-group-cell-label,
+.grid_default2 .ag-header-cell-label,
+.grid_default2 .ag-header-group-cell,
+.grid_default3 .ag-header-group-cell-label,
+.grid_default3 .ag-header-cell-label,
+.grid_default3 .ag-header-group-cell {
+  justify-content: center;
+}
+
+/* td style */
+.grid_default .ag-theme-alpine .ag-row,
+.grid_default2 .ag-theme-alpine .ag-row,
+.grid_default3 .ag-theme-alpine .ag-row {
+  font-family: "Pretendard-T";
+  font-size: 15px;
+  background-color: #ffffff;
+}
+
+.grid_default .ag-ltr .ag-cell,
+.grid_default .ag-ltr .ag-cell-focus {
+  display: grid;
+  align-items: center;
+}
+
+.grid_default2 .ag-ltr .ag-cell,
+.grid_default2 .ag-ltr .ag-cell-focus {
+  display: grid;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 1px solid #dfe7eb !important;
+  border-bottom: 1px solid #dfe7eb !important;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.grid_default3 .ag-ltr .ag-cell,
+.grid_default3 .ag-ltr .ag-cell-focus {
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-bottom: 1px solid #dfe7eb !important;
+  line-height: 22px;
+  padding: 16px;
+}
+.grid_default3 .ag-ltr .ag-cell .ag-cell-wrapper {
+  align-items: normal;
+}
+.grid_default3 .ag-ltr .ag-cell .ag-selection-checkbox {
+  display: inline-block;
+}
+
+.grid_default2 .ag-ltr .ag-cell:last-child {
+  border-right: 0px !important;
+}
+
+.cell_center {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.ag-overlay-no-rows-center {
+  font-family: "Pretendard-B";
+  font-size: 18px;
+  color: #cccccc;
+}
+
+/* 대쉬보드 그리드 */
+
+/* th style */
+.grid_dash .ag-header,
+.grid_dash .ag-advanced-filter-header {
+  border-bottom: 2px solid #596d76;
+  background-color: #ffffff;
+  font-family: "Pretendard-B";
+  font-size: 14px;
+  color: #596d76;
+}
+/* td style */
+.grid_dash .ag-theme-alpine .ag-row {
+  font-family: "Pretendard-T";
+  font-size: 15px;
+}
+.grid_dash .ag-row {
+  border-radius: 12px;
+  border: 5px solid #fff;
+  background-color: #aaa;
+}
+.grid_dash .ag-ltr .ag-cell,
+.grid_dash .ag-ltr .ag-cell-focus {
+  display: grid;
+  border: 0px;
+  border-right: 1px solid #000;
+  line-height: 26px;
+  padding: 10px;
+}
+.grid_dash .ag-ltr .ag-cell:last-child {
+  border-right: 0px !important;
+}
+
+/* TREE */
+.tree {
+  margin-left: -20px;
+}
+.tree-list,
+.tree-row {
+  gap: 0 !important;
+  --row-hover-background: transparent !important;
+  cursor: pointer;
+}
+.tree-row-item {
+  height: 30px;
+  padding: 0px !important;
+  font-family: "Pretendard-B";
+  font-size: 15px;
+}
+.tree > ul > li.tree-row .tree-row-item {
+  height: 0px;
+  overflow: hidden;
+}
+.tree > ul > li > ul > li.tree-row .tree-row-item {
+  height: 40px;
+}
+.tree > ul > li > ul > li > ul > li.tree-row .tree-row-item {
+  height: 30px;
+  margin-top: 0px;
+  font-size: 14px;
+  color: #466277;
+}
+.tree > ul > li > ul > li > ul > li .tree-row-txt {
+  display: grid;
+  align-items: center;
+  height: 100%;
+  border-radius: 20px;
+}
+.tree > ul > li > ul > li > ul > li .tree-row-txt:hover {
+  height: 100%;
+  background-color: #466277;
+  padding: 0px 10px;
+  color: #ffffff;
+}
+.tree > ul > li > ul > li > ul > li.tree-row:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -3px;
+  top: 0px;
+  width: 20px;
+  height: 30px;
+  background-image: url("@/assets/img/tree_line.png");
+  background-position: center;
+}
+.tree > ul > li > ul > li > ul > li.tree-row:last-child:before {
+  content: "";
+  background-image: url("@/assets/img/tree_line_end.png");
+}
+.tree-row-item .child-count {
+  font-size: 11px;
+  color: #ff6600 !important;
+}
+
+.tree-row-item input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* agGrid textarea 폰트 크기 수정 */
+.ag-large-text-input {
+  font-size: 23px;
+}
+
+.ag-large-text-input:after {
+  content: "줄바꿈은 shift + enter를 입력해 주세요";
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 3px;
+  font-family: "Pretendard-B";
+  font-size: 12px;
+  color: #666666;
+}
+
+.apexcharts-title-text,
+.apexcharts-legend-text,
+.apexcharts-xaxis-label {
+  font-family: "Pretendard-B" !important;
+  vertical-align: middle;
+}
+.apexcharts-legend-marker {
+  vertical-align: middle;
+}
+.apexcharts-legend-series {
+  margin-top: 8px !important;
+}
+.apexcharts-toolbar {
+  display: none !important;
+}
+
+.v3dp__datepicker,
+.v3dp__input_wrapper {
+  display: inline;
+}
+.v3dp__input_wrapper input[type="text"]:read-only,
+.v3dp__input_wrapper input[type="date"]:read-only,
+.v3dp__input_wrapper input[type="time"]:read-only {
+  height: 36px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  color: #252525;
+  font-family: "Pretendard-B";
+  font-size: 14px;
+}
+.v3dp__input_wrapper input[type="text"]:disabled,
+.v3dp__input_wrapper input[type="date"]:disabled,
+.v3dp__input_wrapper input[type="time"]:disabled {
+  height: 36px;
+  background-color: #f6f6f6;
+  border: 0px;
+  border-radius: 6px;
+  color: #252525;
+  font-family: "Pretendard-B";
+  font-size: 14px;
+}
+.v3dp__input_wrapper .fromTo {
+  width: calc(50% - 10px);
+}
+.v3dp__input_wrapper .full {
+  width: 100%;
+}
+.v3dp__popout {
+  width: calc(100vw - 60px) !important;
+  top: 32px;
+  box-shadow: 0px 5px 20px RGBA(0, 0, 0, 0.3) !important;
+}
+.v3dp__elements .selected,
+.v3dp__elements .selected span {
+  background-color: #466277 !important;
+  border: 0px !important;
+}
+.v3dp__elements .current {
+  border: 2px solid #466277 !important;
+  border-radius: 4px;
+}
+.v3dp__elements .current span {
+  outline: 0px !important;
+}

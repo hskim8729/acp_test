@@ -1,0 +1,845 @@
+.index_wrap {
+  width: 100%;
+  background-color: #dee7eb;
+}
+.index_top {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: #31445f;
+  background: linear-gradient(90deg, #1a2e4a, #31445f);
+  z-index: 97;
+  transition: height 0.3s;
+}
+.index_top.scroll {
+  height: 40px;
+  transition: height 0.3s;
+}
+.index_content {
+  width: 100%;
+  max-width: 2000px;
+  min-width: 1600px;
+  margin: 0px auto;
+  background-color: #ffffff;
+}
+
+.index_top .logo {
+  float: left;
+  width: 200px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 15px;
+  background-image: url("@/assets/img/index_top_logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.2s, margin 0.2s;
+}
+.index_top.scroll .logo {
+  margin-top: 4px;
+  margin-left: -10px;
+  transform: scale(0.7);
+  transition: transform 0.2s, margin 0.2s;
+}
+.index_top .top_menu {
+  float: right;
+  height: 100%;
+  padding-top: 10px;
+  margin-right: 20px;
+  transition: padding 0.3s, margin 0.3s;
+}
+.index_top.scroll .top_menu {
+  padding-top: 0px;
+  margin-right: 0px;
+  transition: padding 0.3s, margin 0.3s;
+}
+.index_top .top_menu button {
+  height: 40px;
+  padding: 0px 20px;
+  margin-left: 10px;
+  border: 0px;
+  border-radius: 20px;
+  font-family: "Pretendard-B";
+  font-size: 15px;
+  color: #ffffff;
+  transition: border-radius 0.3s, margin 0.3s, font-size 0.3s;
+}
+.index_top.scroll .top_menu button {
+  margin-left: 0px;
+  border-radius: 0px;
+  font-size: 13px;
+  transition: border-radius 0.3s, margin 0.3s, font-size 0.3s;
+}
+.index_top .top_menu button.login {
+  background-color: #417da6;
+}
+.index_top .top_menu button.trial {
+  background-color: #39aaad;
+}
+.index_top .top_menu button.others {
+  background-color: transparent;
+  border: none;
+  color: #daebf7;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+.index_content .main_banner {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  background-image: url("@/assets/img/index_top_banner.jpg");
+  background-size: 2000px 1040px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.index_content .main_banner span {
+  position: absolute;
+  top: 210px;
+  left: 100px;
+  line-height: 90px;
+  font-family: "Pretendard-EB";
+  font-size: 60px;
+
+  background: linear-gradient(60deg, #9cb5da, #d6e0ee, #ffffff);
+  background-clip: text;
+  color: transparent;
+}
+.index_content .main_banner .banner_btn {
+  position: absolute;
+  top: 600px;
+  left: 100px;
+}
+.index_content .main_banner .banner_btn button {
+  width: 200px;
+  height: 80px;
+  margin-right: 30px;
+  border-radius: 4px;
+  font-family: "Pretendard-EB";
+  font-size: 20px;
+}
+.index_content .main_banner .banner_btn button.login {
+  background-color: transparent;
+  border: 2px solid #daebf7;
+  color: #daebf7;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.index_content .main_banner .banner_btn button.login:hover {
+  background-color: rgba(15, 90, 140, 0.2);
+  border: 2px solid #1e4c6d;
+  color: #093c60;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.index_content .main_banner .banner_btn button.trial {
+  background-color: #39aaad;
+  border: 2px solid #39aaad;
+  color: #ffffff;
+  transition: background-color 0.3s, border 0.3s;
+}
+.index_content .main_banner .banner_btn button.trial:hover {
+  background-color: #289699;
+  border: 2px solid #126467;
+  transition: background-color 0.3s, border 0.3s;
+}
+section .content_text .small {
+  font-size: 14px;
+}
+.index_section_01 {
+  height: 600px;
+  background-image: url("@/assets/img/section_01_bg.jpg");
+  background-size: 2000px 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_01 .title_text {
+  position: absolute;
+  top: 130px;
+  right: 50%;
+  width: 700px;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+.index_section_01 .content_text {
+  position: absolute;
+  top: 220px;
+  right: 50%;
+  width: 700px;
+  line-height: 45px;
+  font-family: "Pretendard-B";
+  font-size: 26px;
+  background: linear-gradient(60deg, #694b03, #906d1b);
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0px;
+}
+.index_section_01 .content_text .strong {
+  display: inline-block;
+  line-height: 48px;
+  margin-top: 20px;
+  font-family: "Pretendard-EB";
+  font-size: 30px;
+  color: #5b4105;
+}
+.index_section_01 .content_text .strong:before {
+  content: "";
+}
+
+.index_section_02 {
+  height: 600px;
+  background-image: url("@/assets/img/section_02_bg.jpg");
+  background-size: 2000px 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_02 .title_text {
+  position: absolute;
+  top: 120px;
+  left: 60%;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  background: linear-gradient(60deg, #6b4e0c, #896d2d);
+  background-clip: text;
+  color: transparent;
+}
+.index_section_02 .content_text {
+  position: absolute;
+  top: 210px;
+  left: 60%;
+  line-height: 50px;
+  font-family: "Pretendard-B";
+  font-size: 26px;
+  color: #888888;
+  letter-spacing: 0px;
+}
+.index_section_02 .text_logo {
+  display: inline-block;
+  width: 165px;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-image: url("@/assets/img/logotype.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.index_section_03 {
+  height: 600px;
+  background-image: url("@/assets/img/section_03_bg.jpg");
+  background-size: 2000px 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_03 .title_text {
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  background: linear-gradient(60deg, #4b77c5, #5ea1d5);
+  background-clip: text;
+  color: transparent;
+}
+.index_section_03 .content_text {
+  position: absolute;
+  top: 210px;
+  left: 100px;
+  line-height: 50px;
+  font-family: "Pretendard-B";
+  font-size: 26px;
+  letter-spacing: 0px;
+  background: linear-gradient(60deg, #555555, #999999);
+  background-clip: text;
+  color: transparent;
+}
+
+.index_section_04 {
+  height: 600px;
+  background-image: url("@/assets/img/section_04_bg.jpg");
+  background-size: 2000px 600px;
+  background-position: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_04 .title_text {
+  position: absolute;
+  top: 120px;
+  left: 47%;
+  width: 800px;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px rgba(10, 80, 100, 0.8);
+}
+.index_section_04 .content_text {
+  position: absolute;
+  top: 210px;
+  left: 47%;
+  width: 800px;
+  line-height: 50px;
+  font-family: "Pretendard-B";
+  font-size: 26px;
+  color: #ffffff;
+  letter-spacing: 0px;
+  background: linear-gradient(60deg, #106171, #003352);
+  background-clip: text;
+  color: transparent;
+}
+
+.index_section_05 {
+  height: 600px;
+  background-image: url("@/assets/img/section_05_bg.jpg");
+  background-size: 2000px 600px;
+  background-color: #39aaad;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_05 .title_text {
+  position: absolute;
+  top: 100px;
+  right: 46%;
+  width: 800px;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  background: linear-gradient(60deg, #25305b, #9a7d25);
+  background-clip: text;
+  color: transparent;
+  text-align: right;
+}
+.index_section_05 .content_text {
+  position: absolute;
+  top: 190px;
+  right: 46%;
+  width: 800px;
+  line-height: 50px;
+  font-family: "Pretendard-B";
+  font-size: 26px;
+  background: linear-gradient(60deg, #50555c, #7d7267);
+  background-clip: text;
+  color: transparent;
+  text-align: right;
+  letter-spacing: 0px;
+}
+
+.index_section_06 {
+  height: 600px;
+  background-image: url("@/assets/img/section_06_bg.jpg");
+  background-size: 2000px 600px;
+  background-position: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_06 .title_text {
+  position: absolute;
+  top: 120px;
+  right: 100px;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  background: linear-gradient(60deg, #445b00, #2c5200);
+  background-clip: text;
+  color: transparent;
+  text-align: right;
+}
+.index_section_06 .content_text {
+  position: absolute;
+  top: 210px;
+  right: 100px;
+  line-height: 50px;
+  font-family: "Pretendard-B";
+  font-size: 26px;
+  background: linear-gradient(60deg, #999999, #666666);
+  background-clip: text;
+  color: transparent;
+  text-align: right;
+  letter-spacing: 0px;
+}
+
+.index_section_07 {
+  height: 600px;
+  background-image: url("@/assets/img/section_07_bg.jpg");
+  background-size: 2000px 600px;
+  background-color: #39aaad;
+  background-position: right;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_07 .title_text {
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  line-height: 60px;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  background: linear-gradient(60deg, #244e66, #3e7798);
+  background-clip: text;
+  color: transparent;
+}
+.index_section_07 .content_text {
+  position: absolute;
+  top: 270px;
+  left: 100px;
+  line-height: 50px;
+  font-family: "Pretendard-B";
+  font-size: 26px;
+  background: linear-gradient(60deg, #666666, #999999);
+  background-clip: text;
+  color: transparent;
+}
+.index_section_07 .store {
+  position: absolute;
+  top: 420px;
+  left: 100px;
+}
+.index_section_07 .store button {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  border: 0px;
+  border-radius: 10px;
+  margin-right: 20px;
+  background-color: #eee;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 6px 10px 18px rgba(0, 0, 0, 0.2);
+}
+.index_section_07 .store .google {
+  background-image: url("@/assets/img/store_google.png");
+}
+.index_section_07 .store .apple {
+  background-image: url("@/assets/img/store_apple.png");
+}
+
+.index_section_08 {
+  height: 600px;
+  background-image: url("@/assets/img/section_08_bg.jpg");
+  background-size: 2000px 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_08 .title_text {
+  position: absolute;
+  top: 120px;
+  right: 100px;
+  font-family: "Pretendard-EB";
+  font-size: 50px;
+  color: #252525;
+  text-align: right;
+}
+.index_section_08 .content_text {
+  position: absolute;
+  top: 210px;
+  right: 100px;
+  line-height: 60px;
+  font-family: "Pretendard-EB";
+  font-size: 36px;
+  color: #252525;
+  text-align: right;
+}
+
+.index_section_price {
+  height: 900px;
+  background-image: url("@/assets/img/section_price_bg.jpg");
+  background-size: 2000px 1000px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.index_section_price .title_text {
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  width: 100%;
+  font-family: "Pretendard-EB";
+  font-size: 40px;
+  color: #252525;
+  text-align: center;
+}
+.index_section_price .content_text {
+  position: absolute;
+  top: 150px;
+  right: 0px;
+  width: 100%;
+  line-height: 36px;
+  font-family: "Pretendard-B";
+  font-size: 20px;
+  color: #666666;
+  text-align: center;
+}
+
+.index_section_price .price_table {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 0px auto;
+  margin-top: 300px;
+}
+.index_section_price .price_card {
+  position: relative;
+  width: 280px;
+  height: 410px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 20px rgba(30, 60, 100, 0.3);
+}
+.index_section_price .price_card .title {
+  position: absolute;
+  left: -2px;
+  top: -44px;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-family: "Pretendard-EB";
+  font-size: 33px;
+  color: #ffffff;
+}
+.index_section_price .price_card:nth-child(1) .title {
+  color: #1f9699;
+}
+.index_section_price .price_card:nth-child(2) .title {
+  color: #1f5082;
+}
+.index_section_price .price_card:nth-child(3) .title {
+  color: #671f82;
+}
+.index_section_price .price_card:nth-child(4) .title {
+  color: #1a2e4a;
+}
+.index_section_price .price_card .price {
+  width: 100%;
+  height: 100px;
+  border-radius: 0px 20px 0px 0px;
+  padding-top: 28px;
+  background-color: #ffffff;
+  font-family: "Pretendard-EB";
+  font-size: 36px;
+  color: #ffffff;
+  text-align: center;
+}
+.index_section_price .price_card:nth-child(1) .price {
+  background-color: #1f9699;
+}
+.index_section_price .price_card:nth-child(2) .price {
+  background-color: #1f5082;
+}
+.index_section_price .price_card:nth-child(3) .price {
+  background-color: #671f82;
+}
+.index_section_price .price_card:nth-child(4) .price {
+  background-color: #1a2e4a;
+}
+.index_section_price .price_card .price span {
+  margin-left: 10px;
+  font-family: "Pretendard-B";
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.index_section_price .price_card .spec {
+  width: 100%;
+  padding: 20px 20px;
+}
+.index_section_price .price_card .spec li {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  font-family: "Pretendard-B";
+  font-size: 18px;
+  color: #666666;
+}
+.index_section_price .price_card .spec li:before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+  margin-top: -5px;
+  margin-right: 5px;
+  background-image: url("@/assets/img/price_check_gray.png");
+  vertical-align: middle;
+}
+.index_section_price .price_card:nth-child(1) .spec li:before {
+  background-image: url("@/assets/img/price_check_gray.png");
+}
+.index_section_price .price_card:nth-child(2) .spec li:before {
+  background-image: url("@/assets/img/price_check_blue.png");
+}
+.index_section_price .price_card:nth-child(3) .spec li:before {
+  background-image: url("@/assets/img/price_check_violet.png");
+}
+.index_section_price .price_card:nth-child(4) .spec li:before {
+  background-image: none;
+  width: 0;
+}
+.alarm {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  margin-right: 5px;
+  background-image: url("@/assets/img/alarm.png");
+  background-size: contain; /* 이미지 크기를 요소 크기에 맞춤 */
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  vertical-align: middle;
+}
+.index_section_price .price_card .spec li span {
+  display: block;
+  float: right;
+  width: 70px;
+  height: 100%;
+  height: 40px;
+  font-family: "Pretendard-EB";
+  font-size: 22px;
+  color: #252525;
+}
+.index_section_price .price_card:nth-child(1) .spec li span {
+  color: #1f9699;
+}
+.index_section_price .price_card:nth-child(2) .spec li span {
+  color: #1f5082;
+}
+.index_section_price .price_card:nth-child(3) .spec li span {
+  color: #671f82;
+}
+.index_section_price .price_card:nth-child(4) .spec li span {
+  color: #1a2e4a;
+}
+
+.index_section_price .price_card .sub {
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-family: "Pretendard-EB";
+  font-size: 16px;
+  color: #252525;
+}
+
+.index_section_price .btn_area {
+  position: absolute;
+  top: 800px;
+  left: 50%;
+  width: 480px;
+  transform: translate(-50%);
+}
+.index_section_price .btn_area button {
+  width: 200px;
+  height: 60px;
+  margin: 0px 20px;
+  border-radius: 4px;
+  border: 0px;
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+  font-family: "Pretendard-EB";
+  font-size: 20px;
+}
+.index_section_price .btn_area button.login {
+  background-color: rgba(20, 60, 100, 0.4);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.index_section_price .btn_area button.login:hover {
+  background-color: rgba(20, 60, 100, 0.8);
+  transition: background-color 0.3s;
+}
+.index_section_price .btn_area button.trial {
+  background-color: rgba(20, 100, 80, 0.4);
+  transition: background-color 0.3s, border 0.3s;
+}
+.index_section_price .btn_area button.trial:hover {
+  background-color: rgba(20, 100, 80, 0.8);
+  transition: background-color 0.3s;
+}
+
+.index_section_footer {
+  height: 250px;
+  background-color: #333333;
+  background-image: url("@/assets/img/section_footer_bg.jpg");
+  background-size: 2000px 500px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: #ffffff;
+}
+.index_section_footer .footer_logo {
+  position: absolute;
+  left: 50px;
+  top: 30px;
+  width: 200px;
+  height: 30px;
+  background-image: url("@/assets/img/footer_logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.4;
+}
+.index_section_footer .footer_menu {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.index_section_footer .footer_menu button {
+  position: relative;
+  margin: 0px 20px;
+  border: 0px;
+  background-color: transparent;
+  font-family: "Pretendard-R";
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s;
+}
+.index_section_footer .footer_menu button:hover {
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.3s;
+}
+/* .index_section_footer .footer_menu button:before {
+    position:absolute;
+    top:5px;
+    left:-22px;
+    content:"";
+    display:inline-block;
+    width:5px;
+    height:5px;
+    border-radius: 10px;
+    background-color:rgba(255,255,255,0.4);
+} */
+.index_section_footer .footer_menu button:first-child:before {
+  display: none;
+}
+.index_section_footer .info {
+  position: absolute;
+  left: 50px;
+  top: 80px;
+  line-height: 24px;
+  font-family: "Pretendard-R";
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.index_section_footer .copy {
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+  font-family: "Pretendard-R";
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 로그인 창 */
+.index_login_bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 96;
+}
+.index_login_bg.show {
+  display: block;
+}
+
+.index_login_box {
+  position: fixed;
+  top: 60px;
+  right: -450px;
+  width: 400px;
+  height: 500px;
+  padding: 40px 65px;
+  border-radius: 0px 0px 0px 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px) grayscale(50%) brightness(120%);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: 97;
+  transition: top 0.3s, right 0.3s, opacity 0.2s;
+}
+.index_login_box.show {
+  display: block;
+  right: 0px;
+  opacity: 1;
+  transition: right 0.3s, opacity 0.6s, top 0.3s;
+}
+.index_login_box.scroll {
+  top: 40px;
+  transition: right 0.3s, opacity 0.6s, top 0.3s;
+}
+.index_login_box label {
+  display: block;
+  margin: 15px 0px 5px 0px;
+  font-family: "Pretendard-B";
+  font-size: 11px;
+  color: #666666;
+}
+.index_login_box input[type="text"],
+.index_login_box input[type="password"] {
+  width: 100%;
+  height: 43px;
+  font-family: "Pretendard-EB";
+  font-size: 14px;
+}
+.index_login_box input[type="text"]::placeholder,
+.index_login_box input[type="password"]::placeholder {
+  font-family: "Pretendard-R";
+  font-size: 12px;
+  color: #999999;
+}
+.index_login_box button {
+  width: 100%;
+  height: 45px;
+  margin-top: 20px;
+  border: 0px;
+  border-radius: 6px;
+  background-color: #5175eb;
+  font-family: "Pretendard-B";
+  font-size: 14px;
+  color: #ffffff;
+  box-shadow: 0px 0px 0px rgba(84, 120, 233, 0.3);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.index_login_box button:hover {
+  background-color: #6d8efa;
+  box-shadow: 0px 5px 10px rgba(84, 120, 233, 0.3);
+  transition: all 0.3s;
+}
+.index_login_box .notice {
+  width: 100%;
+  line-height: 24px;
+  border-top: 1px dashed #cccccc;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-family: "Pretendard-R";
+  font-size: 12px;
+  color: #666666;
+}
+.index_login_box .notice span {
+  margin-left: 5px;
+  text-decoration: underline;
+  font-family: "Pretendard-B";
+  color: #048ecc;
+  cursor: pointer;
+}
+
+.index_login_box .login_id_save {
+  width: 100%;
+  margin-top: 10px;
+}
+.index_login_box .login_id_save label {
+  display: inline-block;
+  color: #888888;
+}
+
+.index_login_box .login_title_area {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 50px;
+  background-image: url("@/assets/img/login_logo_web.png");
+  background-repeat: no-repeat;
+}

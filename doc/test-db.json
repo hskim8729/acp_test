@@ -1,0 +1,472 @@
+{
+  "treeMenu" : [{
+    "id": 0,
+        "label": "메뉴",
+        "expanded" : true,
+        "nodes": [
+    {
+      "id": 1,
+      "label": "안전점검활동",
+      "menuId" : "1",
+      "menuNm" : "안전점검활동",
+      "menuUpperId" : "0",
+      "menuSeq" : 1,
+      "menuPath" : "",
+      "nodes": [
+        {
+          "id": 2,
+          "label": "위험성평가"
+        },
+        {
+          "id": 3,
+          "label": "합동안전점검"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "안전활동",
+      "nodes": [
+        {
+          "id": 5,
+          "label": "TBM"
+        },
+        {
+          "id": 6,
+          "label": "중점점검활동"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "추가위험발굴",
+      "nodes": [
+        {
+          "id": 8,
+          "label": "사업장 순회점검"
+        },
+        {
+          "id": 9,
+          "label": "근로자 제안"
+        },
+        {
+          "id": 10,
+          "label": "아차사고 제보"
+        },
+        {
+          "id": 11,
+          "label": "추가위험"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "label": "현장",
+      "nodes": [
+        {
+          "id": 13,
+          "label": "현장등록"
+        },
+        {
+          "id": 14,
+          "label": "현장개설목록"
+        },
+        {
+          "id": 15,
+          "label": "현장개요"
+        },
+        {
+          "id": 16,
+          "label": "현장개설 실시규정"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "label": "표준관리",
+      "nodes": [
+        {
+          "id": 18,
+          "label": "위험요인 표준"
+        },
+        {
+          "id": 19,
+          "label": "실시규정 표준"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "label": "시스템",
+      "nodes": [
+        {
+          "id": 21,
+          "label": "코드관리"
+        },
+        {
+          "id": 22,
+          "label": "메뉴관리"
+        },
+        {
+          "id": 23,
+          "label": "권한관리"
+        },
+        {
+          "id": 24,
+          "label": "사용자관리"
+        },
+        {
+          "id": 25,
+          "label": "협력업체관리"
+        }
+      ]
+    }
+  ]}
+  ],
+  "selectCompanyTreeMenu" : [
+    {
+      "id": 1,
+      "label": "안전점검활동",
+      "menuId" : "1",
+      "menuNm" : "안전점검활동",
+      "menuUpperId" : "0",
+      "menuSeq" : 1,
+      "menuPath" : "",
+      "nodes": [
+        {
+          "id": 2,
+          "label": "위험성평가"
+        },
+        {
+          "id": 3,
+          "label": "합동안전점검"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "안전활동",
+      "nodes": [
+        {
+          "id": 5,
+          "label": "TBM"
+        },
+        {
+          "id": 6,
+          "label": "중점점검활동"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "추가위험발굴",
+      "nodes": [
+        {
+          "id": 8,
+          "label": "사업장 순회점검"
+        },
+        {
+          "id": 9,
+          "label": "근로자 제안"
+        },
+        {
+          "id": 10,
+          "label": "아차사고 제보"
+        },
+        {
+          "id": 11,
+          "label": "추가위험"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "label": "현장",
+      "nodes": [
+        {
+          "id": 13,
+          "label": "현장등록"
+        },
+        {
+          "id": 14,
+          "label": "현장개설목록"
+        },
+        {
+          "id": 15,
+          "label": "현장개요"
+        },
+        {
+          "id": 16,
+          "label": "현장개설 실시규정"
+        }
+      ]
+    }
+  ],
+  "gridData" : [
+    { "bsSlt" : "1", "stdClsNm" : "1", "stdNm" : "KRA", "stdDsc" : "산업안전보건공단 제공 표준(KRA)", "constDate" : "2023-10-13", "btn" : "1"},
+    { "bsSlt" : "0", "stdClsNm" : "1", "stdNm" : "SIF", "stdDsc" : "산업안전보건공단 제공 표준(SIF)", "constDate" : "2023-10-14", "btn" : "2"},
+    { "bsSlt" : "0", "stdClsNm" : "2", "stdNm" : "SM상선(아파트)", "stdDsc" : "아파트용 회사 표준", "constDate" : "2023-10-16", "btn" : "3"}
+  ],
+  "comCodes" : [
+    { "rowNum" : "1", "comCdUpperId" : "M0002", "comCdId" : "M000201", "comCdNm" : "최초", "comCdDc" : "최초 설명", "sortOrdr" : "1"},
+    { "rowNum" : "2", "comCdUpperId" : "M0002", "comCdId" : "M000202", "comCdNm" : "상시", "comCdDc" : "상시 설명", "sortOrdr" : "2"},
+    { "rowNum" : "3", "comCdUpperId" : "M0002", "comCdId" : "M000203", "comCdNm" : "수시", "comCdDc" : "수시 설명", "sortOrdr" : "3"},
+    { "rowNum" : "1", "comCdUpperId" : "M0001", "mngCodeNo" : "M0001", "mngCodeNm" : "변경유무", "mngCodeDesc" : "변경유무 설명", "mngCodeSort" : "1", "mngCodeYn" : "0"},
+    { "rowNum" : "2", "comCdUpperId" : "M0001", "mngCodeNo" : "M0002", "mngCodeNm" : "권한", "mngCodeDesc" : "권한 설명", "mngCodeSort" : "2", "mngCodeYn" : "0"},
+    { "rowNum" : "3", "comCdUpperId" : "M0001", "mngCodeNo" : "M0003", "mngCodeNm" : "공지사항 구분", "mngCodeDesc" : "구분 설명", "mngCodeSort" : "3", "mngCodeYn" : "0"},
+    { "rowNum" : "4", "comCdUpperId" : "M0001", "mngCodeNo" : "M0004", "mngCodeNm" : "사용자", "mngCodeDesc" : "사용자 설명", "mngCodeSort" : "4", "mngCodeYn" : "0"}
+  ],
+  "menus" : [
+    {
+      "menuId" : "10",
+      "menuName" : "메인화면",
+      "subMenu" : ""
+    },
+    {
+      "menuId" : "20",
+      "menuName" : "대시보드",
+      "subMenu" : ""
+    },
+    {
+      "menuId" : "30",
+      "menuName" : "안전점검활동",
+      "subMenu" : ""
+    },
+    {
+      "menuId" : "40",
+      "menuName" : "안전활동",
+      "subMenu" : ""
+    },
+    {
+      "menuId" : "50",
+      "menuName" : "추가위험발굴",
+      "subMenu" : ""
+    },
+    {
+      "menuId" : "60",
+      "menuName" : "현장등록",
+      "subMenu" : ""
+    },
+    {
+      "menuId" : "70",
+      "menuName" : "표준관리",
+      "subMenu" : ""
+    },
+    {
+      "menuId" : "80",
+      "menuName" : "시스템",
+      "subMenu" : ""
+    }
+  ],
+  "posts": [
+    {
+      "title": "게시글 1",
+      "contents": "게시글 1의 내용은 다음과 같다.1",
+      "name": "홍길동",
+      "createdAt": "2021-06-21",
+      "id": 1
+    },
+    {
+      "id": 3,
+      "title": "게시글 3",
+      "contents": "게시글 33의 내용은 다음과 같다고 함...\n",
+      "name": "김철수",
+      "createdAt": "2021-06-23",
+      "userId": 3
+    },
+    {
+      "id": 4,
+      "title": "게시글 4",
+      "contents": "게시글 4의 내용은 다음과 같다.",
+      "name": "황진이",
+      "createdAt": "2021-06-24",
+      "userId": 3
+    },
+    {
+      "id": 5,
+      "title": "게시글 5",
+      "contents": "게시글 5의 내용은 다음과 같다.",
+      "name": "장논개",
+      "createdAt": "2021-06-25",
+      "userId": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "홍길동",
+      "email": "pcushelly0@drupal.org",
+      "gender": "M",
+      "age": 33,
+      "addr": "서울시 강서구 강서동 111",
+      "note": "특기할 만한 사항은 다음과 같다."
+    },
+    {
+      "id": 2,
+      "name": "김샬롯",
+      "email": "chollindale1@blogs.com",
+      "gender": "F",
+      "age": 22,
+      "addr": "서울시 강서구 강서동 222"
+    },
+    {
+      "id": 3,
+      "name": "김철수",
+      "email": "stollit2@51.la",
+      "gender": "M",
+      "age": 25,
+      "addr": "서울시 강서구 강서동 333",
+      "note": "특기할 만한 사항은 없다."
+    },
+    {
+      "id": 4,
+      "name": "이영희",
+      "email": "fdigg3@rakuten.co.jp",
+      "gender": "F",
+      "age": 35,
+      "addr": "서울시 관악구 신림동 112"
+    },
+    {
+      "id": 5,
+      "name": "임꺽정",
+      "email": "edehn4@alibaba.com",
+      "gender": "M",
+      "age": 45,
+      "addr": "서울시 관악구 신림동 333",
+      "note": "특기할 만한 사항은 다음과 같다."
+    },
+    {
+      "name": "Anjanette22",
+      "email": "afellows5@prweb.com",
+      "gender": "M",
+      "age": "11",
+      "addr": "서울시 관악구 신림동 199",
+      "note": "테스트 수정222",
+      "id": 6
+    },
+    {
+      "name": "Ellwood R25",
+      "email": "ebenoix6@slideshare.net",
+      "gender": "M",
+      "age": "33",
+      "addr": "서울시 강남구 강남동 123888",
+      "note": "888",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Sue",
+      "email": "srozier7@goodreads.com",
+      "gender": "F",
+      "age": 21,
+      "addr": "서울시 강남구 강남동 432",
+      "note": "특기할 만한 사항은 다음과 같다."
+    },
+    {
+      "name": "Marcelo 3",
+      "email": "mtrace8@dmoz.org",
+      "gender": "M",
+      "age": "23",
+      "addr": "서울시 강북구 홍제동 222",
+      "note": "33",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Alden",
+      "email": "Alden@themeforest.net",
+      "gender": "M",
+      "age": 21,
+      "addr": "서울시 강남구 강남동 243",
+      "note": "특기할 만한 사항은 다음과 같다."
+    },
+    {
+      "name": "Alden",
+      "email": "dkd",
+      "gender": "M",
+      "age": "33",
+      "addr": "서울시 강남구 강남동 243",
+      "note": "특기할 ",
+      "id": 13
+    },
+    {
+      "name": "황진이2",
+      "email": "hangdk@abc.com",
+      "gender": "M",
+      "age": "23",
+      "addr": "",
+      "note": "",
+      "id": 15
+    },
+    {
+      "name": "장길산33",
+      "email": "gsan@abc.com",
+      "gender": "M",
+      "age": "45",
+      "addr": "길산동",
+      "note": "산적",
+      "id": 18
+    },
+    {
+      "name": "테스트8",
+      "email": "skdf@abc.com",
+      "gender": "M",
+      "age": "22",
+      "addr": "dkdk",
+      "note": "ddddkdk",
+      "id": 20
+    },
+    {
+      "name": "테디3",
+      "email": "dkd@dbd.com",
+      "gender": "M",
+      "age": "33",
+      "addr": "",
+      "note": "",
+      "id": 21
+    },
+    {
+      "name": "홍길동",
+      "email": "hgd@abc.com",
+      "gender": "M",
+      "age": "33",
+      "addr": "서울시",
+      "note": "비고",
+      "id": 23
+    },
+    {
+      "name": "이철수",
+      "email": "dkdkd@abc.com",
+      "gender": "M",
+      "age": "11",
+      "addr": "",
+      "note": "",
+      "id": 24
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "contents": "게시글 1의 댓글입니다.",
+      "name": "홍길동",
+      "createdAt": "2021-06-28",
+      "postId": 3,
+      "userId": 3
+    },
+    {
+      "id": 2,
+      "contents": "게시글 2의 댓글입니다",
+      "name": "박문수",
+      "createdAt": "2021-06-28",
+      "postId": 3,
+      "userId": 3
+    },
+    {
+      "id": 3,
+      "contents": "개사뮬 3의 댓글입니다....\n",
+      "name": "김철수",
+      "postId": 3,
+      "userId": 3
+    }
+  ]
+}

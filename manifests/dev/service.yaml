@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: tapp-front
+  name: tapp-front
+  namespace: tapp-dev
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: tapp-front

@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon_file">
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M6 2H14L20 8V12H18V9H13V4H6V20H10V22H5.99C4.89 22 4 21.1 4 20L4.01 4C4.01 2.9 4.9 2 6 2Z" fill="white"/>
+<path id="Vector" d="M18 15V19C18 20.1 17.1 21 16 21C14.9 21 14 20.1 14 19V14.5C14 14.22 14.22 14 14.5 14C14.78 14 15 14.22 15 14.5V19H17V14.5C17 13.12 15.88 12 14.5 12C13.12 12 12 13.12 12 14.5V19C12 21.21 13.79 23 16 23C18.21 23 20 21.21 20 19V15H18Z" fill="white"/>
+</g>
+</svg>

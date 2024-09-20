@@ -1,0 +1,535 @@
+@use "vuetify" with (
+  // variables go here
+  $body-font-family: "Pretendard",
+  $font-weights: (
+    // 현재 다운받아진 폰트 파일이 5단계여서 임의로 thin, light 같게 배정
+    "thin": 300,
+    "light": 300,
+    "regular": 400,
+    "medium": 700,
+    "bold": 800,
+    "black": 900
+  ),
+  $typography: (
+    // HEADLINE
+    "h1":
+      (
+        // with 절 내에서는 해당 모듈의 변수 참조 불가 => 직접 "Pretendard"
+        "font-family": "Pretendard",
+        "size": 36px,
+        "font-style": normal,
+        "weight": 900,
+        "line-height": 48px,
+        "letter-spacing": 0.0125em,
+        "text-transform": none
+      ),
+    "h2": (
+      "font-family": "Pretendard",
+      "size": 32px,
+      "font-style": normal,
+      "weight": 900,
+      "line-height": 42px,
+      "letter-spacing": 0.0125em,
+      "text-transform": none
+    ),
+    "h3": (
+      "font-family": "Pretendard",
+      "size": 28px,
+      "font-style": normal,
+      "weight": 900,
+      "line-height": 38px,
+      "letter-spacing": 0.0125em,
+      "text-transform": none
+    ),
+    "h4": (
+      "font-family": "Pretendard",
+      "size": 24px,
+      "font-style": normal,
+      "weight": 900,
+      "line-height": 32px,
+      "letter-spacing": 0.0125em,
+      "text-transform": none
+    ),
+    // SUBTITLE
+    "subtitle-1":
+      (
+        "font-family": "Pretendard",
+        "size": 20px,
+        "font-style": normal,
+        "weight": 800,
+        "line-height": 28px,
+        "letter-spacing": 0.009375em,
+        "text-transform": none
+      ),
+    "subtitle-2": (
+      "font-family": "Pretendard",
+      "size": 18px,
+      "font-style": normal,
+      "weight": 800,
+      "line-height": 26px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "subtitle-3": (
+      "font-family": "Pretendard",
+      "size": 17px,
+      "font-style": normal,
+      "weight": 800,
+      "line-height": 24px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "subtitle-4": (
+      "font-family": "Pretendard",
+      "size": 16px,
+      "font-style": normal,
+      "weight": 800 !important,
+      "line-height": 24px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "subtitle-5": (
+      "font-family": "Pretendard",
+      "size": 15px,
+      "font-style": normal,
+      "weight": 800,
+      "line-height": 22px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "subtitle-6": (
+      "font-family": "Pretendard",
+      "size": 14px,
+      "font-style": normal,
+      "weight": 800,
+      "line-height": 20px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    // BODY
+    "body-1":
+      (
+        "font-family": "Pretendard",
+        "size": 16px,
+        "font-style": normal,
+        "weight": 400,
+        "line-height": 24px,
+        "letter-spacing": 0.009375em,
+        "text-transform": none
+      ),
+    "body-2": (
+      "font-family": "Pretendard",
+      "size": 15px,
+      "font-style": normal,
+      "weight": 400,
+      "line-height": 22px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "body-3": (
+      "font-family": "Pretendard",
+      "size": 14px,
+      "font-style": normal,
+      "weight": 400,
+      "line-height": 20px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "body-4": (
+      "font-family": "Pretendard",
+      "size": 13px,
+      "font-style": normal,
+      "weight": 400,
+      "line-height": 18px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "body-5": (
+      "font-family": "Pretendard",
+      "size": 12px,
+      "font-style": normal,
+      "weight": 400,
+      "line-height": 18px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    // CAPTION
+    "caption-1":
+      (
+        "font-family": "Pretendard",
+        "size": 13px,
+        "font-style": normal,
+        "weight": 700,
+        "line-height": 18px,
+        "letter-spacing": 0.009375em,
+        "text-transform": none
+      ),
+    "caption-2": (
+      "font-family": "Pretendard",
+      "size": 12px,
+      "font-style": normal,
+      "weight": 700,
+      "line-height": 18px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "caption-3": (
+      "font-family": "Pretendard",
+      "size": 11px,
+      "font-style": normal,
+      "weight": 700,
+      "line-height": 14px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    "caption-4": (
+      "font-family": "Pretendard",
+      "size": 10px,
+      "font-style": normal,
+      "weight": 700,
+      "line-height": 14px,
+      "letter-spacing": 0.009375em,
+      "text-transform": none
+    ),
+    // 이 밑으로는 디자인 시스템에 들어가지 X
+    "h5":
+      (
+        "size": 1.125rem,
+        "weight": 700,
+        "line-height": 2rem,
+        "letter-spacing": 0.0125em,
+        "font-family": "Pretendard",
+        "text-transform": none
+      ),
+    "h6": (
+      "size": 1.125rem,
+      "weight": 800,
+      "line-height": 2rem,
+      "letter-spacing": 0.0125em,
+      "font-family": "Pretendard",
+      // with 절 내에서는 해당 모듈의 변수 참조 불가 => 직접 값을 사용
+      "text-transform": none
+    )
+  )
+);
+
+@use "fonts";
+@use "agGrid";
+
+html {
+  line-height: 1;
+}
+
+body {
+  font-family: vuetify.$body-font-family;
+}
+
+// 기존 css와 충돌
+hr {
+  width: auto;
+  height: auto;
+}
+
+// 앱 전체에 스크롤바 생기지 않게 처리
+html {
+  overflow-y: auto !important;
+}
+
+// v-overay 열렸을때 페이지 내 스크롤 사라지는 현상 방지
+.v-overlay-scroll-blocked:not(html) {
+  overflow-y: auto !important;
+}
+.v-overlay-scroll-blocked {
+  padding-inline-end: 20px;
+}
+button {
+  font: initial;
+  font-family: "Pretendard-R";
+  font-size: 14px;
+}
+input,
+textarea,
+select {
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background: inherit;
+  padding: 5px;
+  font-family: "Pretendard-R";
+  font-size: 14px;
+  vertical-align: middle;
+}
+textarea {
+  line-height: 20px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  margin: 0px 20px 0px 5px;
+  vertical-align: middle;
+}
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="file"],
+input[type="password"],
+select {
+  height: 36px;
+  color: #252525;
+}
+input[type="text"]::placeholder {
+  color: #999999;
+}
+input[type="text"].search_input {
+  padding-right: 40px;
+}
+input[type="text"]:read-only,
+input[type="date"]:read-only,
+input[type="time"]:read-only,
+textarea:read-only {
+  border: 0px;
+  background-color: #f6f6f6;
+}
+.read-only-style-none {
+  input[type="text"]:disabled,
+  input[type="date"]:disabled,
+  input[type="time"]:disabled,
+  textarea:disabled {
+    border: 0px;
+    background-color: transparent;
+    opacity: 1;
+  }
+  .v-field--disabled {
+    opacity: 1;
+  }
+}
+select:not(:-internal-select-author-button) {
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  background-color: field;
+  cursor: default;
+  white-space: pre;
+}
+
+// date type은 기본으로 150px 고정
+.date-width {
+  width: 150px;
+}
+
+/* outlined 속성이 style.css에 정의한 button 속성과 충돌나서 강제적용 */
+.v-btn--variant-outlined {
+  border: thin solid currentColor !important;
+  background-color: unset !important;
+}
+.v-btn--size-default {
+  font-family: Pretendard-B;
+  padding: 0px 10px;
+  min-width: 50px;
+}
+.v-btn--block {
+  min-width: 100%;
+}
+
+.v-btn.v-btn--density-default {
+  height: 36px;
+}
+
+.v-btn.h-40px {
+  height: 40px;
+}
+
+// v-table 패딩
+.v-table > .v-table__wrapper > table > tbody > tr > td,
+.v-table > .v-table__wrapper > table > tbody > tr > th,
+.v-table > .v-table__wrapper > table > thead > tr > td,
+.v-table > .v-table__wrapper > table > thead > tr > th,
+.v-table > .v-table__wrapper > table > tfoot > tr > td,
+.v-table > .v-table__wrapper > table > tfoot > tr > th {
+  padding: 8px 16px;
+}
+
+// 기존 css와 충돌
+.v-field__input {
+  font-size: 14px;
+  border: 0 !important;
+}
+.title .v-field__input {
+  font-size: 1.125rem;
+}
+
+// v-select compact height 설정
+.sub_title_section {
+  .v-select.v-input--density-compact {
+    .v-field {
+      height: 32px;
+    }
+    .v-field__input {
+      padding-top: 0px;
+      padding-bottom: 8px;
+    }
+    .v-field__append-inner {
+      height: 32px;
+    }
+  }
+}
+
+/**
+* 안전보건 확보 의무
+*/
+.safe_duty {
+  /**
+  * 안전보건 기본 테이블
+  */
+  .safe_duty_table {
+    .v-data-table {
+      box-shadow: none !important;
+    }
+    thead th {
+      font-family: "pretendard-B";
+      color: #4e4d4d;
+      height: 40px !important;
+      border-bottom: #333 2px solid !important;
+      font-weight: bold;
+      text-align: center !important;
+      padding: 16px;
+    }
+    tbody {
+      td {
+        height: 40px !important;
+        border-right: #e0e0e0 solid 1px;
+      }
+
+      .safe_check_yn {
+        padding: 0 !important;
+
+        span {
+          border-radius: 5px;
+          font-weight: 800;
+          width: 70px !important;
+          height: 25px;
+          display: inline-block;
+          align-content: center;
+          font-size: 0.75rem;
+
+          &.success {
+            background: #edf9ef;
+            color: #19a63c;
+          }
+          &.none {
+            background: #f3f4f6;
+            color: #9ca3af;
+          }
+          &.fail {
+            background: #fff2f2;
+            color: #ff3b30;
+          }
+        }
+      }
+    }
+    .link {
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .v-data-table-footer {
+      display: none;
+    }
+  }
+
+  // information BOX
+  .safe-information {
+    .info-title {
+      font-size: 15px;
+    }
+  }
+  .safe-info-icon {
+    background-color: #fff2b2;
+    border-radius: 16px;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+
+    i {
+      display: inline-block;
+      width: 20px;
+      height: 10px;
+      background: url(/src/assets/icon/safe_info_icon.png) no-repeat center
+        center;
+      background-size: contain;
+      padding: 10px;
+    }
+  }
+  .safe_info_panel {
+    .v-expansion-panel-title {
+      &.compact {
+        height: 48px !important;
+        min-height: 48px !important;
+      }
+    }
+  }
+}
+
+.m-left-menu {
+  .custom-card {
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+
+  .custom-list {
+    padding: 10px 20px;
+    background-color: transparent !important;
+  }
+
+  .custom-list-item {
+    height: 40px;
+    line-height: 40px;
+    font-family: "Pretendard-R";
+    font-size: 20px;
+    color: #ffffff !important;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 12px;
+      margin-right: 5px;
+      background-image: url("@/assets/img/m_menu_bullet.png");
+      background-size: 100%;
+    }
+  }
+
+  .custom-list-group {
+    .v-list-group__header {
+      padding: 10px 8px;
+    }
+
+    .v-list-item {
+      height: 36px;
+      font-family: "Pretendard-R";
+      font-size: 20px;
+      color: #c1d2e7;
+
+      &:before {
+        content: "";
+        width: 8px;
+        height: 12px;
+        margin-right: 5px;
+        background-image: url("@/assets/img/m_menu_bullet.png");
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+// variant outlined 컴포넌트의 경우 기본 백그라운드, border 컬러 변경
+.v-field--variant-outlined {
+  background-color: white !important;
+}
+.v-field__outline {
+  color: #9ca3af;
+}

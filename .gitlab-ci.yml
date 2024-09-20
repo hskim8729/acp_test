@@ -1,0 +1,89 @@
+stages:
+- build
+- deploy
+
+
+variables:
+  NODE_IMAGE: node:18.17.1
+  DOCKER_IMAGE: docker:24.0.7
+  YQ_IMAGE: mikefarah/yq:4.40.3
+  KUBECTL_IMAGE: bitnami/kubectl:1.28.4
+
+default:
+  tags:
+  - 'tapp-gitlab-runner'
+
+
+.build:
+  stage: build
+  rules:
+  - if: '$CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_REF_NAME == "develop"'
+    variables:
+      ENV: dev
+  # - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_REF_NAME == "develop"'
+  #   variables:
+  #     ENV: dev
+  - if: '$CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_REF_NAME == "main"'
+    variables:
+      ENV: prod
+
+node build:
+  extends:
+  - .build
+  image: $NODE_IMAGE
+  script:
+  - npm install
+  - npm run build:$ENV
+  artifacts:
+    paths:
+    - dist/
+    expire_in: 1h
+
+docker build:
+  extends:
+  - .build
+  image: $DOCKER_IMAGE
+  needs: ['node build']
+  before_script:
+    - mkdir -p $HOME/.docker
+    - echo $DOCKER_AUTH_CONFIG > $HOME/.docker/config.json
+  script:
+    - docker build -t nexus.tapp.asianaidt.com:5000/tapp/${ENV}/tapp-front -f dockerfiles/Dockerfile .
+    - docker push     nexus.tapp.asianaidt.com:5000/tapp/${ENV}/tapp-front
+
+
+.deploy:
+  stage: deploy
+  rules:
+  - if: '$CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_REF_NAME == "develop"'
+    variables:
+      ENV: dev
+  # - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_REF_NAME == "develop"'
+  #   variables:
+  #     ENV: dev
+  - if: '$CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_REF_NAME == "main"'
+    variables:
+      ENV: prod
+
+kubernetes deploy 1/2:
+  extends:
+  - .deploy
+  image: 
+    name: $YQ_IMAGE
+    entrypoint: [""]
+  script:
+    - yq -i e '.spec.template.spec.containers[0].name = "tapp-front-'${CI_COMMIT_SHORT_SHA}'-'${CI_PIPELINE_ID}'"' manifests/${ENV}/deployment.yaml
+  artifacts:
+    paths:
+    - manifests/
+    expire_in: 1h
+
+kubernetes deploy 2/2:
+  extends:
+  - .deploy
+  image: 
+    name: $KUBECTL_IMAGE
+    entrypoint: [""]
+  needs: ['kubernetes deploy 1/2']
+  script:
+    - kubectl apply -f manifests/${ENV}

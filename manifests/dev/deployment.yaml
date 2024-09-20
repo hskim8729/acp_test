@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tapp-front
+  name: tapp-front
+  namespace: tapp-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tapp-front
+  template:
+    metadata:
+      labels:
+        app: tapp-front
+    spec:
+      containers:
+      - image: nexus.tapp.asianaidt.com:5000/tapp/dev/tapp-front
+        name: tapp-front
